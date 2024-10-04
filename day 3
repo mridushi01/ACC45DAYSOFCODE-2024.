@@ -1,0 +1,24 @@
+#include <iostream>
+#include <algorithm> // for max function
+using namespace std;
+
+int main() {
+    int T; // number of test cases
+    cin >> T;
+    
+    while (T--) {
+        int X, Y; // time required for problems A and B
+        cin >> X >> Y;
+        
+        // Solve Problem A first, then Problem B
+        int scoreAFirst = max(0, 500 - 2 * X) + max(0, 1000 - 4 * (X + Y));
+        
+        // Solve Problem B first, then Problem A
+        int scoreBFirst = max(0, 1000 - 4 * Y) + max(0, 500 - 2 * (X + Y));
+        
+        // Output the maximum score from the two possibilities
+        cout << max(scoreAFirst, scoreBFirst) << endl;
+    }
+    
+    return 0;
+}
