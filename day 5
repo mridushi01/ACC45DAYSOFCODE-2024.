@@ -1,0 +1,22 @@
+# Function to check for monopoly in each test case
+def check_monopoly(test_cases):
+    results = []
+    for profits in test_cases:
+        P, Q, R, S = profits
+        # Check the monopoly condition
+        if P > Q + R + S or Q > P + R + S or R > P + Q + S or S > P + Q + R:
+            results.append("YES")
+        else:
+            results.append("NO")
+    return results
+
+# Input reading and processing
+T = int(input())  # Number of test cases
+test_cases = [list(map(int, input().split())) for _ in range(T)]
+
+# Get results for all test cases
+results = check_monopoly(test_cases)
+
+# Output the results
+for result in results:
+    print(result)
