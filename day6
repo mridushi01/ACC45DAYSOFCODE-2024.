@@ -1,0 +1,11 @@
+def max_rent_months(X, Y):
+    if X >= Y:
+        return 0
+    else:
+        return (Y - 1) // X
+
+# Process multiple test cases
+T = int(input())
+for _ in range(T):
+    X, Y = map(int, input().split())
+    print(max_rent_months(X, Y))
