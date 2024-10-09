@@ -1,0 +1,16 @@
+def min_flips_to_same_direction(T, test_cases):
+    results = []
+    for i in range(T):
+        N, X = test_cases[i]
+        # Minimum flips to make all cards face-up or face-down
+        results.append(min(X, N - X))
+    return results
+
+# Input example
+T = 4
+test_cases = [(5, 0), (4, 2), (3, 3), (10, 2)]
+
+# Call the function and print results
+results = min_flips_to_same_direction(T, test_cases)
+for result in results:
+    print(result)
