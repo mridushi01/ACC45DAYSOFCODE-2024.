@@ -1,0 +1,18 @@
+# Function to check if Munchy is an expert
+def is_expert(X, Y):
+    # Munchy is an expert if approved problems are at least 50%
+    return Y / X >= 0.5
+
+# Reading number of test cases
+T = int(input())
+
+# Process each test case
+for _ in range(T):
+    # Read X and Y for each test case
+    X, Y = map(int, input().split())
+    
+    # Output YES if Munchy is an expert, else NO
+    if is_expert(X, Y):
+        print("YES")
+    else:
+        print("NO")
